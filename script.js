@@ -9,16 +9,27 @@ document.getElementById('miEncuesta').addEventListener('submit', function(event)
     const expectativas = document.querySelector('input[name="expectativas"]:checked').value;
     const interes = document.querySelector('input[name="interes"]:checked').value;
 
-    // Agregar las respuestas al array
+    // Agregar respuestas al array
     resultados.push({ atractivo, uso, interfaz, expectativas, interes });
     console.log('Resultados:', resultados);
 
-    // Crear archivo JSON
-    const jsonData = JSON.stringify(resultados, null, 2);
-    const blob = new Blob([jsonData], { type: 'application/json' });
-    const url = URL.createObjectURL(blob);
+    // Mostrar página de gracias
+    document.querySelector('.contenedor').classList.add('oculto');
+    document.getElementById('gracias').style.display = 'block';
+});
 
-    // Configurar el enlace para descargar
-    const descargar = document.getElementById('descargar');
-    descargar.href = url;
+// Botón "Volver a contestar"
+document.getElementById('volver').addEventListener('click', function() {
+    document.getElementById('gracias').style.display = 'none';
+    document.querySelector('.contenedor').classList.remove('oculto');
+});
+
+// Ver respuestas protegidas con contraseña
+document.getElementById('verRespuestas').addEventListener('click', function() {
+    const contraseña = prompt('Introduce la contraseña:');
+    if (contraseña === 'brot') {
+        alert('Respuestas:\n' + JSON.stringify(resultados, null, 2));
+    } else {
+        alert('Contraseña incorrecta.');
+    }
 });

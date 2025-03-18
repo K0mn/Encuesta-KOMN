@@ -22,16 +22,32 @@ body {
 /* Estilo del logo */
 .logo {
     width: 150px; /* Tamaño ajustado del logo */
-    height: auto;
-    margin-bottom: 20px;
+    height: auto; /* Mantener proporciones */
+    margin-bottom: 20px; /* Espacio debajo del logo */
 }
 
 /* Página de gracias */
 #gracias {
     display: none;
+    text-align: center;
 }
 
 /* Ocultar contenedores */
 .oculto {
     display: none;
+}
+
+/* Botón */
+button {
+    background-color: #1c454f;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+button:hover {
+    background-color: #155c46;
 }

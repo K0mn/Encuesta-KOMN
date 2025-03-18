@@ -6,11 +6,11 @@
 </head>
 <body>
     <div class="contenedor">
-        <!-- Imagen del logo -->
+        <!-- Imagen del logo más grande -->
         <img src="logo.png" alt="Logo" class="logo">
         
         <h1>Encuesta</h1>
-        <form id="miEncuesta">
+        <form id="miEncuesta" target="_blank">
             <!-- Primera pregunta -->
             <label>¿Qué tan atractiva es a la vista?</label><br>
             <input type="radio" id="opcion1" name="atractivo" value="1">
@@ -58,8 +58,15 @@
 
             <button type="submit">Enviar</button>
         </form>
-        <a id="descargar" href="#" download="resultados.json">Descargar JSON</a>
+        <button id="verRespuestas">Ver respuestas (Protegido)</button>
     </div>
+
+    <!-- Página de "Gracias" -->
+    <div id="gracias" class="oculto">
+        <h1>Gracias por tu respuesta</h1>
+        <button id="volver">Volver a contestar</button>
+    </div>
+
     <script src="script.js"></script>
 </body>
 </html>

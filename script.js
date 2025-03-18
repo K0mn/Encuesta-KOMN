@@ -30,11 +30,11 @@ document.getElementById('miEncuesta').addEventListener('submit', function(event)
 
 // Botón "Volver a contestar"
 document.getElementById('volver').addEventListener('click', function() {
-    document.getElementById('gracias').style.display = 'none';
-    document.querySelector('.contenedor').classList.remove('oculto');
-
     // Asegurar que el formulario esté limpio
     document.getElementById('miEncuesta').reset();
+
+    document.getElementById('gracias').style.display = 'none';
+    document.querySelector('.contenedor').classList.remove('oculto');
 });
 
 // Ver respuestas protegidas con contraseña
